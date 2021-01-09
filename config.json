@@ -19,5 +19,14 @@
           "link": "https://blog.poleprediction.com/about"
         }
     },
-    "tags": ["other", "software", "elm", "syntax", "maintenance", "programming", "security"]
+    "tags": ["other", 
+             "software",
+             "elm",
+             "syntax",
+             "maintenance",
+             "programming",
+             "security",
+             "compilation",
+             "language-design"
+            ]
 }
