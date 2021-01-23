@@ -27,6 +27,9 @@
              "programming",
              "security",
              "compilation",
-             "language-design"
+             "language-design",
+             "functional",
+             "immutability",
+             "bugs"
             ]
 }
