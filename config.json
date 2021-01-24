@@ -30,6 +30,7 @@
              "language-design",
              "functional",
              "immutability",
-             "bugs"
+             "bugs",
+             "type-safety"
             ]
 }
