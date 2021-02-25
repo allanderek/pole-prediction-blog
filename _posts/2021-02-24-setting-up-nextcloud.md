@@ -134,3 +134,30 @@ Add the following simple line which will mean the cron job is run every 5 minute
 */5  *  *  *  * php -f /var/www/nextcloud/cron.php
 ```
 
+
+## SSL
+
+I'm not sure I understand everything here, but [this was the guide](https://bayton.org/docs/nextcloud/installing-nextcloud-on-ubuntu-16-04-lts-with-redis-apcu-ssl-apache/) I found most useful.
+
+I just installed the `certbot` using `apt-get`
+
+```bash
+apt-get install certbot python3-certbot-apache
+```
+
+Then I basically just ran the `certbot` and it mostly does everything for us:
+
+```bash
+ertbot --apache --agree-tos --rsa-key-size 4096 --email allan@poleprediction.com --redirect -d nextcloud.poleprediction.com
+```
+
+Finally once that has done its business it's worth adding to the configuration (`/etc/apache2/sites-available/nextcloud.conf`:
+
+```
+        <VirtualHost *:80>
+           ServerName cloud.nextcloud.com
+           Redirect permanent / https://cloud.nextcloud.com/
+        </VirtualHost>
+```
+
+This just redirects all incoming `http` traffic to `https`.
