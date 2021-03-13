@@ -20,6 +20,7 @@
         }
     },
     "tags": ["other", 
+             "pole-prediction",
              "software",
              "elm",
              "syntax",
