@@ -148,7 +148,7 @@ apt-get install certbot python3-certbot-apache
 Then I basically just ran the `certbot` and it mostly does everything for us:
 
 ```bash
-ertbot --apache --agree-tos --rsa-key-size 4096 --email allan@poleprediction.com --redirect -d nextcloud.poleprediction.com
+certbot --apache --agree-tos --rsa-key-size 4096 --email allan@poleprediction.com --redirect -d nextcloud.poleprediction.com
 ```
 
 Finally once that has done its business it's worth adding to the configuration (`/etc/apache2/sites-available/nextcloud.conf`:
