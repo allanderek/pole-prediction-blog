@@ -82,4 +82,25 @@ updateWithNewId  updateState model =
 ```
 
 You could also make the `Id` type opaque so that it is impossible to create one without using this module.
-I think this basically solves the issue, but it's pretty far from pretty.
+I think this basically solves the issue, but it's pretty far from pretty. Your update function looks like this:
+
+```elm
+update message model =
+     case message of
+           Tick now ->
+               ( Model.update (\s -> { s | now = now }) model
+               , Cmd.none
+               )
+           ....
+           NewThing ->
+              let
+                    updateFun newId state =
+                         { state | things = Thing.empty newId :: model.things }
+              in
+              ( Model.updateWithNewId updateFun model
+              , Cmd.none
+              )
+           ...
+```
+
+You could probably make this a little more palatable by separating out your messages into those that require a new Id and those that do not and then just matching within those.
