@@ -32,6 +32,7 @@
              "functional",
              "immutability",
              "bugs",
-             "type-safety"
+             "type-safety",
+             "gren"
             ]
 }

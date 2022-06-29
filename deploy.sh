@@ -1,5 +1,5 @@
 #!/bin/sh
 
-elmstatic build
+./build.sh
 surge  _site blog.poleprediction.com
 
